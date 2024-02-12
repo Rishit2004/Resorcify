@@ -1,3 +1,6 @@
+
+![image](bg-image.jpg)
+
 # Resorcify
 Employee management website
 
@@ -13,4 +16,3 @@ Working:
 Design a resource allocation system using banker’s algorithm, obtaining the needs from the task assigned. This will help sort employees based on the task given and their skillset. The employee who receives comparatively higher rating from the previous task completed, will be promoted to the next task. But this might create a deadlock situation as it might lead in the benching of the other less efficient employee. To avoid this situation we will use aging- that after a fixed interval in time, the employee is automatically chosen to the next job, to prevent it from benching for too long. But if the employee still fails to show its skills, he/she will have to face repercussions.
 This whole process will create a premium set of employees showcasing maximum efficiency. Also to track whether the details entered by the employee is authentic, a chip system can be installed on the computer systems to track their work efficiency and flow and also to keep a check of their work done (as it will show whether the work is done using AI or has been completed by the employee himself). This will dilute the filtering process of the HR department. Though we don’t aim to replace the HR department as it also keeps into consideration the human touch and consistency, for which it will just facilitate the work, which can continue at a faster rate and comply to the company guidelines.
 
-![image](bg-image.jpg)
