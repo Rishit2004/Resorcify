@@ -1,0 +1,485 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body{
+  color:aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(56, 54, 54);
+  transition: 300ms;
+}
+
+.sec1{
+  display:grid;
+  grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw;
+  grid-template-rows: 20vh 20vh 20vh;
+  margin-left: 17%;
+  margin-top: 5%;
+  gap: 5%;
+}
+
+.txt{
+  list-style: none;
+  text-decoration: none;
+  display:inline;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 17%;
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.cardog1 {
+  background-image: url("nike.webp");
+  display: flex;
+  margin-bottom: 5%;
+  aspect-ratio: 2.5/1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cardog1 ul{
+  margin-left: 45vw;
+  list-style: none;
+  display: flex;
+  align-self: center;
+  width: 20vw;
+  font-size: 14vh;
+  opacity: 0.8;
+}
+
+.cardog{
+  display: flex;
+  margin-left: 9.5vw;
+  width: 90.5vw;
+  height: fit-content;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+
+.cardog ul{
+  margin-left: 5vw;
+  list-style: none;
+  display: flex;
+  gap: 15vw;
+  padding: 1%;
+  height: fit-content;
+}
+
+.cardog a{
+  font-family:fantasy;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+.card{
+  margin-top: 5%;
+  display: grid;
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: white;
+  border-radius: 10%;
+  overflow:hidden;
+  opacity:0.7;
+}
+
+.card:hover{
+  opacity:1;
+}
+
+.card   img{
+  display:flex;
+  justify-self: center;
+  margin-top: 5%;
+  width: 90%;
+  height: 30vh;
+  border-radius:10%;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  overflow:hidden;
+}
+
+.card img:hover {
+  transition: 300ms;
+  scale:1.2;
+}
+
+.card a{
+  list-style: none;
+  color: black;
+  display: flex;
+  justify-self: center;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  height: 100vh;
+  width: fit-content;
+  justify-content: center;
+  padding-right: 2vw;
+  position: fixed;
+  background-color: black;
+  color: aliceblue;
+
+}
+
+nav ul li{
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.5vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  margin-top: 15vh;
+  overflow: hidden;
+  margin-left:2vw;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: black;
+
+}
+
+a {
+  text-decoration: none;
+  color:#959595;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a:hover{
+  transition: 300ms;
+  size-adjust:2vw;
+
+  color: aliceblue;
+}
+
+.about{
+  font-size: large;
+  font-weight: 600;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  padding: 2vw;
+  opacity: 0.7;
+  background: linear-gradient(to right,
+  rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  margin-left: 27vw;
+  margin-bottom: 2vh;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  border-radius: 2rem;
+  box-shadow: 10px 10px 10px gray;
+}
+
+.services{
+  display: flex;
+  padding: 2vw;
+  background-color: black;
+  color: white;
+  margin-top: 5vh;
+  width: 87vw;
+  margin-left: 9vw;
+}
+
+.txt1{
+  margin-left: 10%;
+}
+
+.txt1 ul li{
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.txt1 li:hover{
+  opacity: 0.7;
+  color: rgb(187, 187, 187);
+}
+
+.txt2{
+  margin-left: 10%;
+}
+
+.wrapper {
+  display: flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background:transparent;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 4%;
+  width: 10%;
+  height: auto;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper img{
+    display: flex;
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #5690db;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #5690db ;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #378dc2;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #378dc2;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #b904a7;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #b904a7;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #d0d1bec9;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #d0d1bec9;
+}
+
+footer{
+  margin-left: 9.5%;
+  background-color: black;
+  color: white;
+  padding: 2%;
+}
+
+@media screen and (max-width: 650px) {
+
+  .menu-toggle {
+    position: absolute;
+    margin: 10px;
+    color:rgb(255, 255, 255);
+    display: block; /* Show menu toggle button */
+
+  }
+
+  .navbar  ul{
+    display: none; /* Hide menu by default */
+  }
+
+  .navbar.active ul {
+    display: block;
+    background-color: black;
+    color: aliceblue;
+    z-index: 100;
+  }
+
+  .navbar.active .menu-toggle{
+    color: white;
+    transition-duration: 300ms;
+    transform: rotate(360deg);
+    z-index: 100;
+  }
+
+  nav{
+    background-color:  rgb(56, 54, 54);
+    display: flex;
+    height: 100vh;
+    width: fit-content;
+    padding: 2%;
+  }
+
+  nav ul li {
+    list-style: none;
+    width: 20vw;
+    margin-left:4vw;
+  }
+
+
+
+
+  /*changing here*/
+
+
+
+
+
+  .sec1{
+    display:grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    grid-template-rows: 25vh 25vh 25vh 25vh 25vh ;
+    gap: 5%;
+    margin-left: 4vw;
+    margin-top: 5%;
+    border: 0;
+    padding: 0;
+  }
+  
+  .cardog1 {
+    background-image: url("nike.webp");
+    display: flex;
+    margin-bottom: 5%;
+    aspect-ratio: 2.5/1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the background image */
+  }
+  
+  .cardog1 ul{
+    margin-left: 45vw;
+    list-style: none;
+    display: flex;
+    align-self: center;
+    width: 20vw;
+    font-size: 14vw;
+    opacity: 0.8;
+  }
+
+  
+  
+  .cardog{
+    display: flex;
+    width: 90vw;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-left: 5vw;
+    border: 0;
+    padding: 0;
+  }
+  
+.cardog ul{
+  margin-left: 5vw;
+  list-style: none;
+  display: flex;
+  gap: 6vw;
+  padding: 1%;
+  height: fit-content;
+  background-color: black;
+
+}
+
+.cardog a{
+  font-family:fantasy;
+  font-size: 2.5vw;
+  font-weight: 600;
+}
+  
+  .card{
+    margin-top: 5%;
+    display: grid;
+    grid-row: span 2;
+    grid-column: span 2;
+    background-color: beige;
+    border-radius: 10%;
+  }
+  
+  .card   img{
+    display:flex;
+    justify-self: center;
+    margin-top: 5%;
+    width: 90%;
+    height: 30vh;
+    border-radius:10%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+  }
+  
+  .card li{
+    list-style: none;
+    color: black;
+    margin-left: 8%;
+    font-size: 3vw;
+    font-weight: 600;
+  }
+
+  .about{
+    padding: 2vw;
+    opacity: 0.7;
+    background: linear-gradient(to right,
+    rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+    margin-left: 15.25vw;
+    margin-bottom: 2vh;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px gray;
+  }
+
+  .services{
+    display: flex;
+    padding: 2vw;
+    background-color: black;
+    color: white;
+    margin-top: 5vh;
+    margin-left: 0vw;
+    width: 96vw;
+  }
+
+footer{
+  display: flex;
+  padding: 2vw;
+  background-color: black;
+  color: white;
+  margin-left: 2vw;
+  width: 94vw;
+}
+}

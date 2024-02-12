@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Employee Information</title>
+  <link rel="script" href="viewwmployees.js">
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/add-r.css' rel='stylesheet'>
+
+  <style>
+  body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(bg-image.jpg);
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #333333;
+  color: #000000;
+}
+
+.inactive {
+    display: none;
+  }
+
+
+.headd{
+  display: flex;
+  flex-wrap: wrap;
+  gap:2vw;
+  margin: 5vh 0vw 5vh 20vw;
+}
+
+.headd li{
+  display: inline;
+  width:60vw;
+  height: fit-content;
+  background: transparent;
+  padding: 5px;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  backdrop-filter:blur(10px);
+  text-align: center;
+}
+
+.output-panel1 {
+  width: 70vw;
+  height: auto;
+  margin: 2vh 15vw;
+  padding: 20px;
+  background: transparent;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  backdrop-filter:blur(10px);
+}
+
+.output-panel2 {
+  width: 70vw;
+  height: auto;
+  margin: 2vh 15vw;
+  padding: 20px;
+  background: transparent;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  backdrop-filter:blur(10px);
+}
+
+.employee-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size: 0.8em;
+}
+
+.detail {
+  display: inline;
+  width: fit-content;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 0.3em;
+  padding: 5px;
+  background-color: #75ffc3;
+  align-self: center;
+  justify-items: center;
+}
+
+.detail1 {
+  display: inline;
+  width: fit-content;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 0.3em;
+  padding: 5px;
+  background-color: #ff2e2e;
+  align-self: center;
+  justify-items: center;
+}
+
+.plus {
+  display: flex;
+  width: fit-content;
+  height: 2vh;
+  font-size: px;
+  margin-bottom: 10px;
+  border-radius: 10em;
+  padding: 0.5em;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.pr2 {
+    font-display: flex;
+    align-self: center;
+    color: #00ff91;
+    font-family: Candara Light;
+    font-size: 6vh;
+    text-decoration: double;
+    background: #000000;
+    margin-bottom: 1vh;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  align-self: center;
+  justify-content: center;
+}
+
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: solid;
+  border-radius: 1em;
+  border-width: 1px;
+}
+
+button a{
+  text-decoration: none;
+  color: #000;
+}
+
+button:hover {
+  scale:1.1;
+  background-color: #27ae60;
+}
+  </style>
+</head>
+
+<body>
+    <div class="pr2">
+          <center>
+            RESOURCIFY
+          </center>
+      </div>
+
+
+  <div class="headd">
+  <li>Total number of employees:</li>
+  <li>Employees currently available: </li>
+  </div>
+
+
+<div class="buttons">
+  <button onclick="filterByStatus('Active')">Show Active</button>
+  <button onclick="filterByStatus('Unactive')">Show Passive</button>
+  <button onclick="showAll()">Show All</button>
+  <button type="submit" onclick="window.location.href='templates\sql-data.html'"><a href="templates\sql-data.html">View the whole data base</a> </button>
+</div><br>
+
+</div>
+<div class="review">
+      <div class="output-panel1">
+        <div class="employee-details">
+          <div class="detail">
+            <label>Employee ID: 358</label>
+            <span id="employeeId"></span>
+          </div>
+      
+          <div class="detail">
+            <label>Name: Neeraj Bandi</label>
+            <span id="employeeName"></span>
+          </div>
+          <div class="detail">
+            <label>Grade: A</label>
+            <span id="employeeGrade"></span>
+          </div>
+      
+          <div class="detail">
+            <label>Designation: Full-Stack Developer</label>
+            <span id="employeeDesignation"></span>
+          </div>
+
+          <div class="detail">
+            <span id="employeestatus1">Active</span>
+          </div>
+
+        </div>
+  </div>
+
+  <div class="output-panel2">
+
+    <div class="employee-details">
+      <div class="detail">
+        <label>Employee ID: 358</label>
+        <span id="employeeId"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Name: Neeraj Bandi</label>
+        <span id="employeeName"></span>
+      </div>
+      <div class="detail">
+        <label>Grade: A</label>
+        <span id="employeeGrade"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Designation: Full-Stack Developer</label>
+        <span id="employeeDesignation"></span>
+      </div>
+      <div class="detail1">
+        <span id="employeestatus2">Unactive</span>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="output-panel1">
+    <div class="employee-details">
+      <div class="detail">
+        <label>Employee ID: 358</label>
+        <span id="employeeId"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Name: Neeraj Bandi</label>
+        <span id="employeeName"></span>
+      </div>
+      <div class="detail">
+        <label>Grade: A</label>
+        <span id="employeeGrade"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Designation: Full-Stack Developer</label>
+        <span id="employeeDesignation"></span>
+      </div>
+      <div class="detail">
+        <span id="employeestatus1">Active</span>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="output-panel2">
+    <div class="employee-details">
+      <div class="detail">
+        <label>Employee ID: 358</label>
+        <span id="employeeId"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Name: Neeraj Bandi</label>
+        <span id="employeeName"></span>
+      </div>
+      <div class="detail">
+        <label>Grade: A</label>
+        <span id="employeeGrade"></span>
+      </div>
+  
+      <div class="detail">
+        <label>Designation: Full-Stack Developer</label>
+        <span id="employeeDesignation"></span>
+      </div>
+      <div class="detail1">
+        <span id="employeestatus2">Unactive</span>
+      </div>
+
+    </div>
+</div>
+
+<div class="output-panel1">
+  <div class="employee-details">
+    <div class="detail">
+      <label>Employee ID: 358</label>
+      <span id="employeeId"></span>
+    </div>
+
+    <div class="detail">
+      <label>Name: Neeraj Bandi</label>
+      <span id="employeeName"></span>
+    </div>
+    <div class="detail">
+      <label>Grade: A</label>
+      <span id="employeeGrade"></span>
+    </div>
+
+    <div class="detail">
+      <label>Designation: Full-Stack Developer</label>
+      <span id="employeeDesignation"></span>
+    </div>
+
+    <div class="detail">
+      <span id="employeestatus1">Active</span>
+    </div>
+  </div>
+</div>
+
+<div class="output-panel2">
+
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="output-panel1">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail">
+  <span id="employeestatus1">Active</span>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="output-panel2">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+</div>
+</div>
+<div class="output-panel1">
+  <div class="employee-details">
+    <div class="detail">
+      <label>Employee ID: 358</label>
+      <span id="employeeId"></span>
+    </div>
+
+    <div class="detail">
+      <label>Name: Neeraj Bandi</label>
+      <span id="employeeName"></span>
+    </div>
+    <div class="detail">
+      <label>Grade: A</label>
+      <span id="employeeGrade"></span>
+    </div>
+
+    <div class="detail">
+      <label>Designation: Full-Stack Developer</label>
+      <span id="employeeDesignation"></span>
+    </div>
+
+    <div class="detail">
+      <span id="employeestatus1">Active</span>
+    </div>
+  </div>
+</div>
+
+<div class="output-panel2">
+
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="output-panel1">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail">
+  <span id="employeestatus1">Active</span>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="output-panel2">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+
+</div>
+</div>
+<div class="output-panel1">
+  <div class="employee-details">
+    <div class="detail">
+      <label>Employee ID: 358</label>
+      <span id="employeeId"></span>
+    </div>
+
+    <div class="detail">
+      <label>Name: Neeraj Bandi</label>
+      <span id="employeeName"></span>
+    </div>
+    <div class="detail">
+      <label>Grade: A</label>
+      <span id="employeeGrade"></span>
+    </div>
+
+    <div class="detail">
+      <label>Designation: Full-Stack Developer</label>
+      <span id="employeeDesignation"></span>
+    </div>
+
+    <div class="detail">
+      <span id="employeestatus1">Active</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="output-panel2">
+
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="output-panel1">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail">
+  <span id="employeestatus1">Active</span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="output-panel2">
+<div class="employee-details">
+<div class="detail">
+  <label>Employee ID: 358</label>
+  <span id="employeeId"></span>
+</div>
+
+<div class="detail">
+  <label>Name: Neeraj Bandi</label>
+  <span id="employeeName"></span>
+</div>
+<div class="detail">
+  <label>Grade: A</label>
+  <span id="employeeGrade"></span>
+</div>
+
+<div class="detail">
+  <label>Designation: Full-Stack Developer</label>
+  <span id="employeeDesignation"></span>
+</div>
+<div class="detail1">
+  <span id="employeestatus2">Unactive</span>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+  </div>
+
+  <script>
+    function filterByStatus(status) {
+      const outputPanels = document.querySelectorAll('.output-panel1, .output-panel2');
+
+      outputPanels.forEach((panel) => {
+        const employeestatusElement = panel.querySelector('[id^="employeestatus"]');
+
+        if (employeestatusElement.textContent.toLowerCase() === status.toLowerCase()) {
+          panel.classList.remove('inactive');
+        } else {
+          panel.classList.add('inactive');
+        }
+      });
+    }
+
+    function showAll() {
+      const outputPanels = document.querySelectorAll('.output-panel1, .output-panel2');
+
+      outputPanels.forEach((panel) => {
+        panel.classList.remove('inactive');
+      });
+    }
+  </script>
+  </body>
+</html>
+
+

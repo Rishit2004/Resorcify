@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="import" href="login.css">
+  <style>
+    pr2 {
+      font-display: flex;
+      align-self: center;
+      color: #00ff91;
+      font-family: Candara Light;
+      font-size: 6vh;
+      text-decoration: double;
+      background: #000000;
+    }
+  </style>
+  <div class="ribbon">
+    <p>
+      <center>
+        <pr2>Welcome to RESOURCIFY</pr2>
+      </center>
+    </p>
+  </div>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  Body {
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: wheat;
+    background-image: url('bg-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+    color: #000000;
+  }
+
+
+
+  button {
+    background-color: #ffffff;
+    width: 20%;
+    color: #000000;
+    padding: 15px;
+    margin: 10px 0px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    border-radius:10rem;
+    text-decoration:none;
+  }
+
+  @keyframes ramu {
+    from {
+      visibility: hidden;
+      width: 0%;
+    }
+
+    to {
+      visibility: visible;
+      width: 95%;
+    }
+  }
+
+  form {
+    color: #000000;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 2em;
+    background: transparent;
+    box-shadow: 1px 1px 10px black;
+    backdrop-filter: blur(1px);
+    border-radius: 20px;
+  }
+
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 1em 1em;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 10rem;
+    box-sizing: border-box;
+    margin: 1em;
+  }
+
+  button:hover {
+    top: -5px;
+    left: -5px;
+    box-shadow: 10px 10px 50px #ffffff;
+  }
+
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    margin: 10px 5px;
+  }
+
+  .container>a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .container {
+    background-position-y: fixed;
+    padding: 30px;
+    margin-top: 80px;
+  }
+
+  a{
+    text-decoration: none;
+    color: #000000;
+  }
+</style>
+</head>
+
+<body>
+  <form>
+    <div class="container">
+      <label>Username : </label>
+      <input type="text" placeholder="Enter Username" name="username" role>
+      <label>Password : </label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <input type="checkbox" checked="checked"> Remember me &nbsp;<br>
+      <button type="submit" onclick="window.location.href='home.html'"><a href="home.html">Login</a> </button><br>
+    </div>
+  </form>
+</body>
+
+</html>

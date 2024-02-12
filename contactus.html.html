@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NextGen AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(bg-image.jpeg);
+            background-repeat: no-repeat;
+            background-position: fixed;
+            background-size:cover;
+            background-attachment: fixed;
+            background-color: #333333;
+        }
+
+        header {
+            background: transparent;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            color: #fff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background:transparent;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f89bff ;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background-color: #f89bff;
+        }
+
+        button {
+            background-color:#780e55;
+            color: #f89bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10vh;
+            padding:2vh 10vh 2vh 10vh;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        button:hover {
+            background-color: #8b2198;
+            box-shadow: 0px 0px 20px #ff5bc8;
+            text-shadow:2px 2px #333333;
+        }
+
+        .wrapper {
+          display: inline-flex;
+          list-style: none;
+          margin: 0% 0% 0% 0%;
+        }
+
+.wrapper .icon {
+  position: relative;
+  background:transparent;
+  border-radius: 50%;
+  padding: 0.5vw;
+  margin: 2vw;
+  width: 6vw;
+  height: auto;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper img{
+    display: flex;
+    width:100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #5690db;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #5690db ;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #378dc2;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #378dc2;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #f50ea8;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #c406c7;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #000000;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #d0d1bec9;
+  color: #ffffff;
+  box-shadow: 0px 0px 100px #d0d1bec9;
+}
+    </style>
+</head>
+<body>
+
+  <header>
+      <h1>Contact NextGen AI</h1>
+  </header>
+
+  <main>
+      <form id="contactForm" action="/submit" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+      </form>
+  </main>
+  <section id="contact" class="sec2">
+    <center><ul class="wrapper">
+        <li class="icon facebook"><a href=""><img src="fblog.png"></a>
+          <span class="tooltip"><a href="">Facebook</a></span>
+          <span><i class="fab fa-facebook-f"></i></span>
+        </li>
+        <li class="icon twitter"><a href=""><img src="linkedin.png"></a>
+          <span class="tooltip"><a href="">Linkedin</a></span>
+          <span><i class="fab fa-twitter"></i></span>
+        </li>
+        <li class="icon instagram"><a href=""><img src="istg-icon.png"></a>
+          <span class="tooltip">Instagram</a></span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+        <li class="icon github"><a href=""><img src="gitlog.png"></a>
+          <span class="tooltip">Github</a></span>
+          <span><i class="fab fa-github"></i></span>
+        </li>
+        <li class="icon youtube"><a href=""><img src="gmaillog.png"></a>
+          <span class="tooltip"><a href="">Gmail</a></span>
+          <span><i class="fab fa-youtube"></i></span>
+        </li>
+      </ul></center></section>
+  <!-- Your existing script to prevent the default form submission -->
+  <script>
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+          event.preventDefault();
+          // Add your form submission logic here (e.g., AJAX request to send the data to the server)
+          alert('Form submitted successfully!');
+      });
+  </script>
+
+</body>
+</html>

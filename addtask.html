@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>TASK</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Raleway:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<style>
+    .pr2 {
+    font-display: flex;
+    align-self: center;
+    color: #00ff91;
+    font-family: Candara Light;
+    font-size: 6vh;
+    text-decoration: double;
+    background: #000000;
+  }
+nav{
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+nav li{
+  text-decoration: none;
+}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(bg-image.jpg);
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #333333;
+  }
+
+  * {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  body,
+  html {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-X: hidden;
+  }
+
+  .white {
+    color: #fff;
+  }
+
+  main {
+    color: #000000;
+    width: 60vw;
+    height: 60vh;
+    margin: 15vh 15vw 30vh 15vw;
+    padding: 20px;
+    background: transparent;
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #9f9f9f;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  border-radius: 10vh;
+  padding: 10px; 
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #9f9f9f;
+  box-shadow: 0px 0px 20px #929292;
+  text-shadow: 2px 2px #ffffff;
+}
+
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+  .icons {
+    backdrop-filter: blur(5px);
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer h1 {
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .icons a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .thumbnail {
+    top: -50px;
+    left: -35px;
+    display: flex;
+    z-index: 999;
+    cursor: pointer;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+  }
+
+
+  .thumbnail:hover {
+    transform: scale(1.2);
+  }
+
+  .footer {
+    background-color: #000;
+  }
+
+  .footerNav {
+    height: fit-content;
+  }
+
+  .footerNav ul {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footerNav ul li a {
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.0em;
+    opacity: 0.7;
+    transition: 0.5;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footerNav ul li a:hover {
+    opacity: 1;
+  }
+
+  .red {
+    color: #FF0000;
+  }
+
+  hr {
+    border: none;
+    height: 0.5px;
+    color: #333;
+    background-color: #333;
+  }
+
+  @media screen and (max-width: 500px) {
+    footer {
+      max-width: 100%;
+    }
+
+    .footerNav {
+      font-size: 14px;
+    }
+
+    .footerNav ul {
+      display: block;
+      text-align: center;
+      padding: 0;
+    }
+  }
+</style>
+
+<body>
+  <div class="pr2">
+      <center>
+        RESOURCIFY
+      </center>
+  </div>
+  <main>
+      <label for="cars">Choose job Description:</label>
+
+      <select id="jobs" name="jobs">
+        <option value="frontend-developer">frontend-developer</option>
+        <option value="backend-developer">backend-developer</option>
+        <option value="fullstack-developer">fullstack-developer</option>
+        <option value="data-analyst">data-analyst</option>
+        <option value="app-developer">app-designer</option>
+      </select>
+      <br>
+    </form>
+    <label for="jobDescription">Job Description:</label>
+    <textarea id="jobDescription" name="jobDescription" rows="4" cols="50" placeholder="Enter job description here..."></textarea>
+<br>
+
+<label for="resourceRequired">Resource Required:</label>
+<input type="number" id="resourceRequired" name="resourceRequired" placeholder="Enter the number of resources required" min="1">
+<br>
+<button type="submit">Submit</button>
+  </main>
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer">
+      <hr>
+      <div class="icons">
+        <a href="https://www.instagram.com/next_gen.ai/"><img src="istg-icon.png" class="thumbnail" height="40"
+            width="40"></a>
+        <a href="https://www.linkedin.com/company/cintels-next-gen-ai/"><img src="linkedin.png" class="thumbnail"
+            height="40" width="40"></a>
+        <a href='mailto:nextgenai.srmist.edu.in'><img src="gmaillog.png" class="thumbnail" height="40"
+            width="40"></a><br>
+      </div>
+      <div class="footerNav">
+        <ul><br>
+          <li><a href="">HOME</a></li>
+          <li><a href="">ABOUT US</a></li>
+          <li><a href="">EVENTS</a></li>
+          <li><a href="">PROJECTS</a></li>
+          <li><a href="">OUR TEAM</a></li>
+          <li><a href="">CONTACT US</a></li><br>
+        </ul>
+        <hr>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
